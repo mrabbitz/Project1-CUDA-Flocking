@@ -51,17 +51,21 @@ In this step, we utilize four buffers:
 4. Buffer containing a pointer for each cell to the end of its data in Buffer 1
 
 We first populate Buffer 1 and Buffer 2 will look something like this, where Grid cell index is Buffer 2 and Boid index is Buffer 1:
+
 ![Scattered_Buffer_2_3_Initial](images/Scattered_Buffer_2_3_Initial.PNG)
 
 Next, we sort Buffer 2 by grid index, and Buffer 1 is simultaneously rearranged by the sorting of Buffer 2.
 Buffer 1 and Buffer 2 will now look something like this, where Grid cell index is Buffer 2 and Boid index is Buffer 1:
+
 ![Scattered_Buffer_2_3_Sorted](images/Scattered_Buffer_2_3_Sorted.PNG)
 
 Lastly, we populate Buffers 3 and 4, which combined, will look this this, where Cell data pointers is Buffers 3 and 4 combined:
+
 ![Scattered_Buffer_1_2_3_4_Sorted](images/Scattered_Buffer_1_2_3_4_Sorted.PNG)
 
 Given that the actual boid data was never rearranged, we use Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
 This gives us the full picture, where Grid cell index is Buffer 2, Boid index is Buffer 1, Cell data pointers is Buffers 3 and 4 combined, and Pos + Vel is the boid data.
+
 ![Scattered_Full_Sorted](images/Scattered_Full_Sorted.PNG)
 
 To summarize, pointers to boids in a single cell are contiguous in memory, but the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
