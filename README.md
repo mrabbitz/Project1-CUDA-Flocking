@@ -22,9 +22,9 @@ and compute the velocity change contribution from each of the three rules.
 The implemented algorithm for the three rules is based on [Conard Parker's notes](http://www.vergenet.net/~conrad/boids/pseudocode.html)
 with slight adaptations. For the purposes of an interesting simulation,
 we will say that two boids only influence each other by a given rule if they
-are within that rule's **neighborhood distance** of each other, respectively.
+are within the rule's **neighborhood distance** of each other, respectively.
 
-Here are two slowed-down outputs of the simulation:
+Below are two outputs from the simulation, slowed down for easier viewing:
 
 ##### 25,000 Boids
 ![25kBoids](images/Debug_25kBoids_Coherent_100Scale.gif)
