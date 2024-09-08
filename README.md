@@ -60,7 +60,7 @@ In our example, "Grid cell index" is Buffer 2 and "Boid index" is Buffer 1:
 
 ![Scattered_Buffer_2_3_Initial](images/Scattered_Buffer_2_3_Initial.PNG)
 
-Next we sort Buffer 2 by its value, and Buffer 1 is simultaneously rearranged how Buffer 2 is.
+Next we sort Buffer 2 by its value, and Buffer 1 is simultaneously rearranged by Buffer 2's rearragement.
 
 In our example, "Grid cell index" is Buffer 2 and "Boid index" is Buffer 1:
 
