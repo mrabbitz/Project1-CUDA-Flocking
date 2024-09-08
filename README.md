@@ -40,7 +40,7 @@ Three methods of implementation were used to highlight their respective performa
 
 ##### Method 1: Naive Neighbor Search
 A given boid iterates through every other boid in the simulation to check if their distance falls within the neighborhood distance defined by any of the three rules.
-For each applicable rule, it calculates how the given boid's velocity should change based on that rule’s criteria.
+For each applicable rule, the given boid's velocity change is calculated based on that rule’s criteria.
 
 ##### Method 2: Uniform Grid Scattered Neighbor Search
 In a preprocess step, "bin" the boids into a **uniform spatial grid** data structure.
