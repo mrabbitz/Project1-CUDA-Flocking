@@ -5,7 +5,7 @@ Project 1 - Flocking**
   * [LinkedIn](https://www.linkedin.com/in/mike-rabbitz)
 * Tested on: Windows 10, i7-9750H @ 2.60GHz 32GB, RTX 2060 6GB (Personal)
 
-## Boids Simulation
+## Part 1: Overview
 
 In the Boids flocking simulation, particles representing birds or fish
 (boids) move around the simulation space according to three rules:
@@ -31,3 +31,5 @@ Below are two outputs from the simulation, slowed down for easier viewing:
 
 ##### 500,000 Boids
 ![500kBoids](images/Release_500kBoids_Coherent_500Scale.gif)
+
+## Part 2: Performance Analysis
