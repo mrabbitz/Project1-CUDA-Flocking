@@ -44,7 +44,8 @@ For each applicable rule, it calculates how the given boid's velocity should cha
 
 ##### Method 2: Uniform Grid Scattered Neighbor Search
 In a preprocess step, "bin" the boids into a **uniform spatial grid** data structure.
-In this step, we utilize four buffers:
+
+We utilize four buffers:
 1. Buffer containing a pointer for each boid to its position and velocity data
 2. Buffer containing the grid index of each boid
 3. Buffer containing a pointer for each cell to the beginning of its data in Buffer 1
