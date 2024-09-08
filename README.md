@@ -36,7 +36,7 @@ Below are two outputs from the simulation, slowed down for easier viewing:
 
 
 ## Part 2: Implementation Details
-Three methods of implementation were used to exemplify the GPU's performance under various conditions:
+Three methods of implementation were used to highlight their respective performance implications.
 
 ##### Method 1: Naive Neighbor Search
 A given boid iterates through every other boid in the simulation to check if their distance falls within the neighborhood distance defined by any of the three rules.
