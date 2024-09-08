@@ -74,7 +74,8 @@ In our example, "Cell data pointers" is Buffers 3 and 4 combined, "Grid cell ind
 
 Given that the actual boid data was never rearranged, we use Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
 
-In our example, we now have the full picture, where "Cell data pointers" is Buffers 3 and 4 combined,
+In our example, we now have the full picture, where
+"Cell data pointers" is Buffers 3 and 4 combined,
 "Grid cell index" in the middle table is Buffer 2,
 "Boid index" in the middle table is Buffer 1,
 and "Pos + Vel" in the bottom table is the boid data.
@@ -104,7 +105,12 @@ You then iterate through the boids contained in these cells to perform the neces
 Everything is the same as Method 2, except we eliminate the use of Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
 rearranging the boid data itself so that all the velocities and positions of boids in one cell are also contiguous in memory, so this data can be accessed directly using Buffers 3 and 4.
 
-This is full picture, where Grid cell index is Buffer 2, and Cell data pointers is Buffers 3 and 4 combined, and Pos + Vel is the boid data.
+This is full picture, where
+"Cell data pointers" is Buffers 3 and 4 combined,
+"Grid cell index" in the bottom table is Buffer 2,
+and "Pos + Vel" in the bottom table is the boid data.
+
+![Coherent_Full_Sorted](images/Coherent_Full_Sorted.PNG)
 
 #### Grid-Looping Optimization for Methods 2 and 3:
 Initially, we determined how many ccells to check around a given boid by computing a ratio by dividing twice the maximum neighborhood distance of the three rules by the cell width of the grid.
