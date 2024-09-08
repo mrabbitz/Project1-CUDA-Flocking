@@ -28,6 +28,7 @@ Below are two outputs from the simulation, slowed down for easier viewing:
 
 ##### 25,000 Boids
 |25,000 Boids|
+|:--:|
 |![25kBoids](images/Debug_25kBoids_Coherent_100Scale.gif)|
 
 ##### 500,000 Boids
