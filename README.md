@@ -26,11 +26,11 @@ are within the rule's **neighborhood distance** of each other, respectively.
 
 Below are two outputs from the simulation, slowed down for easier viewing:
 
-|25,000 Boids|
+|25,000 Boid Count|
 |:--:|
 |![25kBoids](images/Debug_25kBoids_Coherent_100Scale.gif)|
 
-|500,000 Boids|
+|500,000 Boid Count|
 |:--:|
 |![500kBoids](images/Release_500kBoids_Coherent_500Scale.gif)|
 
