@@ -105,6 +105,8 @@ You then iterate through the boids contained in these cells to perform the neces
 Everything is the same as Method 2, except we eliminate the use of Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
 rearranging the boid data itself so that all the velocities and positions of boids in one cell are also contiguous in memory, so this data can be accessed directly using Buffers 3 and 4.
 
+We rearrange the boid data in a final preprocess step by taking the boid data index value of Buffer 1 to retrieve the boid data and place the boid data in a new buffer in the same order that Buffer 1 is in.
+
 This is full picture, where
 "Cell data pointers" is Buffers 3 and 4 combined,
 "Grid cell index" in the bottom table is Buffer 2,
