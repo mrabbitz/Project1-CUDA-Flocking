@@ -114,7 +114,6 @@ However, these methods also experience performance degradation as the grid becom
 As we push the limits of the Uniform Grid methods, Coherent Neighbor Search always outperforms Scattered Neighbor Search simply because of the way heavily-accessed data is stored contiguous in memory.
 
 <br>
-<br>
 
 ### 3.2: FPS vs Block Size - fixed boid count of 25,000
 
