@@ -75,7 +75,7 @@ We determine the closest point of a cell to the given boid's position by clampin
 
 ## Part 3: Performance Analysis
 - Frames Per Second (FPS) is the measurment of performance in this section. FPS is measured using a GLFW timer within the main loop.
-- In cases where Visualization of the boids is disabled, the FPS reported will be for the the simulation only.
+- In cases where Visualization of the boids is disabled, the FPS reported will be for the simulation only.
 
 ### 3.1: FPS vs Boid Count - fixed block size of 128
 
