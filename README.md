@@ -49,15 +49,15 @@ However, the boid data itself (velocities and positions) is scattered all over t
 
 After the preprocess step, we apply the three boid rules to update a given boid's velocity by only considering other boids that are in nearby grid cells.
 
-To determine which cells to utilize for a given boid, first compute a ratio by dividing
+To determine the nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
-The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.
+The result is the ± offset in each dimension of the given boid's cell such that the range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.
 
-For example, if the maximum neighborhood distance is 5 and the cell width is 10, the ratio is (2 * 5) / 10 = 1.
+For example, if the maximum neighborhood distance is 5 and the cell width is 10, the result is (2 * 5) / 10 = 1.
 This indicates that you should check the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
-In this example, this covers the boid’s cell plus 26 neighboring cells, resulting in a total of 27 cells.
+In this example, this is represented as ([x - 1, x + 1], [y - 1, y + 1], [z = 1, z + 1]) resulting in a total of 27 cells, inclusive of the given boid’s cell.
 
-You then iterate through the boids contained in these cells to perform the necessary calculations.
+You then iterate through the boids contained in these cells to apply the three boid rules to update a given boid's velocity.
 
 *During this iteration is where we "reach" for the boid data that is scattered in memory.*
 
@@ -66,9 +66,9 @@ Everything is the same as Method 2, except we eliminate the "reach" for the boid
 We do this by rearranging the boid data itself so that all the velocities and positions of boids in the same grid cell are also contiguous in memory.
 
 #### Grid-Looping Optimization for Methods 2 and 3:
-Method 2's description shows how for a given boid, we determine the cells that contain the boids we need to iterate through for our calculations.
+Method 2's description shows how for a given boid, we determine the cells that contain the boids we need to iterate through to apply the three boid rules to a given boid..
 
-We took this a step further calculating the closest point of each of these cells to the given boid's position, and checking if the result is within the the maximum neighborhood distance of the three boid rules.
+We take this a step further by calculating the closest point of each of these cells to the given boid's position, and checking if the result is within the the maximum neighborhood distance of the three boid rules.
 If it is not, we no longer consider the boids in that cell.
 
 We determine the closest point of a cell to the given boid's position by clamping the boid's position to the x, y, and z bounds of the cell, then subtracting the boid's position from this closest point of the cell.
@@ -138,17 +138,21 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 
 <br>
 
-### 3.3: FPS vs (Cell Width / Max Rule Distance) Ratio
-**Section 3.3 fixed variables: maximum boid rule distance, block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
+### 3.3: FPS vs (Cell Width / Max Neighborhood Distance) Ratio
+**Section 3.3 fixed variables: maximum neighborhood distance, block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
 
-The (Cell Width / Max Rule Distance) Ratio is a fancy term to describe the uniform grid cell size relative to the maximum distance of the three boid rules.
-If we assume a fixed Max Rule Distance of the default value of the simulation, which is 5, we can intuitively see how the ratio has a positive correlation to cell size.
+The (Cell Width / Max Neighborhood Distance) Ratio is a fancy term to describe the uniform grid cell size relative to the maximum distance of the three boid rules.
+If we assume a fixed Max Neighborhood Distance of the default value of the simulation, which is 5, we can intuitively see how the ratio has a positive correlation to cell size.
 
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 
-*To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
+*To determine the nearby grid cells for a given boid, first divide
+(twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
+The result is the ± offset in each dimension of the given boid's cell such that the range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.*
 
-This gives (2 * Max Rule Distance) / (Cell Width), which can be rewritten as 2 / (Cell Width / Max Rule Distance)
+We can rewrite (2 * Max Neighborhood Distance) / (Cell Width) as 2 / (Cell Width / Max Neighborhood Distance).
+
+Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance) Ratio of this section.
 
 Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as
 
@@ -156,13 +160,13 @@ Once we have the +- offset of cells to consider for a given boid, we can calcula
 
 Here are the results of what we use in this section's performance test:
 
-| Grid Cell Width | Max Rule Distance |      Ratio      |  +- offset  | Total number of cells to consider |
-| --------------- | ----------------- | --------------- | ----------- | --------------------------------- |
-| 2.5             | 5                 | 2.5  / 5 = 0.5  | 2 / 0.5 = 4 | ((2 * 4) + 1)<sup>3</sup> = 729   |
-| 5               | 5                 | 5.0  / 5 = 1.0  | 2 / 1.0 = 2 | ((2 * 2) + 1)<sup>3</sup> = 125   |
-| 10              | 5                 | 10   / 5 = 2.0  | 2 / 2.0 = 1 | ((2 * 1) + 1)<sup>3</sup> = 27    |
+| Grid Cell Width | Max Neighborhood Distance |      Ratio      |  +- offset  | Total number of cells to consider |
+| --------------- | ------------------------- | --------------- | ----------- | --------------------------------- |
+| 2.5             | 5                         | 2.5  / 5 = 0.5  | 2 / 0.5 = 4 | ((2 * 4) + 1)<sup>3</sup> = 729   |
+| 5               | 5                         | 5.0  / 5 = 1.0  | 2 / 1.0 = 2 | ((2 * 2) + 1)<sup>3</sup> = 125   |
+| 10              | 5                         | 10   / 5 = 2.0  | 2 / 2.0 = 1 | ((2 * 1) + 1)<sup>3</sup> = 27    |
 
-However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Rule Distance.
+However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Neighborhood Distance.
 
 #### 3.3.1: Visualization OFF
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
