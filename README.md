@@ -124,5 +124,8 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 | 512        | 120       | 775                | 1065              |
 | 1,024      | 121       | 780                | 1080              |
 
+<br>
+<br>
+
 
 
