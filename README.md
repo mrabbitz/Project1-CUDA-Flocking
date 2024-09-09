@@ -112,7 +112,6 @@ The steep performance drop in Naive Neighbor Search is expected due to its O(n^2
 In contrast, both Uniform Grid Scattered Neighbor Search and Uniform Grid Coherent Neighbor Search, with their O(n) complexity, handle increasing boid count more efficiently.
 However, these methods also experience performance degradation as the grid becomes densely populated and every cell is filled with boids. This could perhaps be mitigated by increasing the scene scale as the number of boids increase.
 As we push the limits of the Uniform Grid methods, Coherent Neighbor Search always outperforms Scattered Neighbor Search simply because of the way heavily-accessed data is stored contiguous in memory.
-
 <br>
 
 ### 3.2: FPS vs Block Size - fixed boid count of 25,000
