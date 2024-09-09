@@ -47,9 +47,9 @@ In a preprocess step, "bin" the boids into a **uniform spatial grid** data struc
 With the clever use of a few buffers, this means that pointers to boids within the same grid cell are stored contiguously in memory.
 However, the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
 
-After the preprocess step, we then perform the calculations to update the boid data.
+After the preprocess step, we then perform the calculations to update a given boid's data by only considering other boids that are in nearby grid cells.
 
-To determine how many cells to check around a given boid, first compute a ratio by dividing
+To determine which cells to utilize for a given boid, first compute a ratio by dividing
 twice the maximum neighborhood distance of the three rules by the cell width of the grid.
 This ratio helps determine how many cells to check in each dimension relative to the cell containing the given boid.
 
