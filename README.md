@@ -78,6 +78,8 @@ Frames Per Second (FPS) will be the measurment of performance within this sectio
 
 FPS is measured using the GLFW timer.
 
-Visualization of the boids is disabled so that the framerate reported will be for the the simulation only.
+In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
 
+### Part 3.1: FPS vs Boid Count
+Fixed block size of 128 threads per block
 
