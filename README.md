@@ -83,3 +83,15 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 ### Part 3.1: FPS vs Boid Count
 Fixed block size of 128 threads per block
 
+![FPS_BoidCount_NoViz](FPS_BoidCount_NoViz.png)
+
+![FPS_BoidCount_Viz](FPS_BoidCount_Viz.png)
+
+### Part 3.2: FPS vs Block Size
+Fixed boid count of 25,000
+
+![FPS_BlockSize](FPS_BlockSize.png)
+
+
+
+
