@@ -81,7 +81,7 @@ FPS is measured using the GLFW timer.
 In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
 
 ### Part 3.1: FPS vs Boid Count
-**For this section, we use a fixed block size of 128 threads per block**
+**For this section, we use a fixed block size of 128**
 
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
 
