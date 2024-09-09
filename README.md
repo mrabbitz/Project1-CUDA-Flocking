@@ -136,10 +136,10 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 
 <br>
 
-### 3.3: FPS vs Cell Volume - fixed block size of 128 using Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization
+### 3.3: FPS vs Cell Volume - fixed block size of 128 using Uniform Grid Coherent Neighbor Search
 
+#### 3.3.1: Visualization OFF
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
-
 
 | Boid Count | Ratio 0.5 FPS | Ratio 1.0 FPS | Ratio 2.0 FPS |
 | ---------- | ------------- | ------------- | ------------- |
@@ -150,4 +150,7 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 | 500,000    | 115           | 215           | 110           |
 | 1,000,000  | 54            | 95            | 33            |
 
+<br>
+
+#### 3.3.2: Observations
 
