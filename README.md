@@ -112,6 +112,12 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 <br>
 <br>
 
+**Analysis of FPS vs Boid Count**
+
+
+<br>
+<br>
+
 ### Part 3.2: FPS vs Block Size
 **For this section, we use a fixed boid count of 25,000**
 
