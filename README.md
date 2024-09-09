@@ -113,8 +113,9 @@ We determine the closest point of a cell to the given boid's position by clampin
 <br>
 <br>
 
-### Part 3.2: FPS vs Block Size - fixed boid count of 25,000
+### 3.2: FPS vs Block Size - fixed boid count of 25,000
 
+#### 3.2.1: Visualization OFF
 ![FPS_BlockSize](images/FPS_BlockSize.png)
 
 | Block Size | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
