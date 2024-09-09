@@ -74,11 +74,9 @@ If it is not, we no longer consider the boids in that cell.
 We determine the closest point of a cell to the given boid's position by clamping the boid's position to the x, y, and z bounds of the cell, then subtracting the boid's position from this closest point of the cell.
 
 ## Part 3: Performance Analysis
-Frames Per Second (FPS) will be the measurment of performance within this section.
-
-FPS is measured using the GLFW timer.
-
-In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
+Frames Per Second (FPS) is the measurment of performance in this section.<br>
+FPS is measured using a GLFW timer within the main loop.<br>
+In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.<br>
 
 ### 3.1: FPS vs Boid Count - fixed block size of 128
 
