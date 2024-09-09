@@ -141,24 +141,21 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 ### 3.3: FPS vs (Cell Width / Max Rule Distance) Ratio
 **Section 3.3 fixed variables: maximum boid rule distance, block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
 
-The (Cell Width / Max Rule Distance) Ratio is a fancy to look at how wide and tall a cell is relative to the maximum distance of the three boid rules.
-If we assume a fixed Max Rule Distance at the default value of the simulation, which is 5, we can envision how the ratio has a positive correlation to Cell Width.
-
-|gcw|# times|ctcofst|
-|2.5|0.5|4|
-|5|1|2|
-|10|2|1|
+The (Cell Width / Max Rule Distance) Ratio is a fancy term to describe the uniform grid cell size relative to the maximum distance of the three boid rules.
+If we assume a fixed Max Rule Distance of the default value of the simulation, which is 5, we can envision how the ratio has a positive correlation to cell size.
 
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 *To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
 
-We can represent this formula as 2 * (Max Rule Distance / Cell Width), and then 2 / (Cell Width / Max Rule Distance).
+2 * (Max Rule Distance / Cell Width) can be rewritten as 2 / (Cell Width / Max Rule Distance)
 
-We are also going to assume the default Max Rule Distance in the simulation, which is 5.
+Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as ((2 * result) + 1)<sup>3</sup>
 
-For example, if Cell Width is 10 the ratio is 10 / 5 = 2 and the formula is 2 / 2 which means +-1 in every dimension which gives 3 * 3 * 3 = 27 total cells.
-For example, if Cell Width is 5 the ratio is 5 / 5 = 1 and the formula is 2 / 1 which means +-2 in every dimension which gives 5 * 5 * 5 = 125 total cells.
-For example, if Cell Width is 2.5 the ratio is 2.5 / 5 = 0.5 and the formula is 2 / 0.5 which means +-4 in every dimension which gives 9 * 9 * 9 = 729 total cells.
+| Grid Cell Width | Max Rule Distance | Ratio | +- offset of cells to consider for a given boid | Total number of cells to consider |
+| --------------- | ----------------- | ----- | ----------------------------------------------- | --------------------------------- |
+| 2.5             | 5                 | 0.5   | 2 / 0.5 = 4                                     | ((2 * 4) + 1)<sup>3</sup> = 729   |
+| 5               | 5                 | 1.0   | 2 / 1.0 = 2                                     | ((2 * 2) + 1)<sup>3</sup> = 125   |
+| 10              | 5                 | 2.0   | 2 / 2/0 = 1                                     | ((2 * 1) + 1)<sup>3</sup> = 27    |
 
 However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Rule Distance.
 
