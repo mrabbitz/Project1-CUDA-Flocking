@@ -130,13 +130,6 @@ As we push the limits of the Uniform Grid methods, Coherent Neighbor Search alwa
 <br>
 
 #### 3.2.2: Observations
-For each implementation, changing the block count and block size seemingly doesn't affect performance.
-The machine used for this test has 1920 CUDA cores across 30 SMs (64 cores per SM), 1024 max resident threads per SM, 16 max resident blocks per SM, and 1024 max threads per block.
-Due to 64 cores per SM, it is reasonable to set the lower bound of the test at the project's default block size of 128.
-The near identical performance across the different tested block sizes comes from multiple factors.
-First, given the constraints of maximum threads and blocks per SM, the GPU's occupancy and scheduling efficiency is probably optimized regardless of block size.
-Second, the kernels that I wrote are not explicitly dependent on synchronization or shared memory, which would have more an effect on changing block size.
-
 For each implementation method, changing the block count and block size has no significant impact on performance.
 The GPU used for this test, with 1920 CUDA cores across 30 SMs (64 cores per SM), 1024 max resident threads per SM, 16 max resident blocks per SM, and 1024 max threads per block, shows minimal performance variation across tested block sizes.
 This is due to the GPU's efficient occupancy and scheduling, as well as the kernels' lack of dependence on synchronization or shared memory, which are more sensitive to block size changes.
