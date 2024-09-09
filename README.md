@@ -81,7 +81,7 @@ FPS is measured using the GLFW timer.
 In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
 
 ### Part 3.1: FPS vs Boid Count
-Fixed block size of 128 threads per block
+**Fixed block size of 128 threads per block**
 
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
 
@@ -94,6 +94,8 @@ Fixed block size of 128 threads per block
 | 500,000   | N/A       | 6                  | 110               |
 | 1,000,000 | N/A       | 2                  | 33                |
 
+
+
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
 | # Boids   | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
@@ -105,8 +107,9 @@ Fixed block size of 128 threads per block
 | 500,000   | N/A       | 5                  | 97                |
 | 1,000,000 | N/A       | 1                  | 31                |
 
+
 ### Part 3.2: FPS vs Block Size
-Fixed boid count of 25,000
+**Fixed boid count of 25,000**
 
 ![FPS_BlockSize](images/FPS_BlockSize.png)
 
