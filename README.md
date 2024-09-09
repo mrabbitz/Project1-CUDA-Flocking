@@ -109,7 +109,6 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 | 1,000,000  | N/A       | 1                  | 31                |
 
 <br>
-<br>
 
 #### 3.1.3: Analysis
 
