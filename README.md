@@ -85,14 +85,14 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
 
-| # Boids   | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
-| --------- | --------- | ------------------ | ----------------- |
-| 5,000     | 900       | 1100               | 1100              |
-| 25,000    | 120       | 800                | 1100              |
-| 50,000    | 35        | 500                | 880               |
-| 125,000   | 6         | 168                | 465               |
-| 500,000   | N/A       | 6                  | 110               |
-| 1,000,000 | N/A       | 2                  | 33                |
+| Boid Count | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
+| ---------- | --------- | ------------------ | ----------------- |
+| 5,000      | 900       | 1100               | 1100              |
+| 25,000     | 120       | 800                | 1100              |
+| 50,000     | 35        | 500                | 880               |
+| 125,000    | 6         | 168                | 465               |
+| 500,000    | N/A       | 6                  | 110               |
+| 1,000,000  | N/A       | 2                  | 33                |
 
 <br>
 <br>
@@ -100,14 +100,14 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
-| # Boids   | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
-| --------- | --------- | ------------------ | ----------------- |
-| 5,000     | 490       | 565                | 560               |
-| 25,000    | 110       | 485                | 560               |
-| 50,000    | 34        | 380                | 515               |
-| 125,000   | 6         | 140                | 345               |
-| 500,000   | N/A       | 5                  | 97                |
-| 1,000,000 | N/A       | 1                  | 31                |
+| Boid Count | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
+| ---------- | --------- | ------------------ | ----------------- |
+| 5,000      | 490       | 565                | 560               |
+| 25,000     | 110       | 485                | 560               |
+| 50,000     | 34        | 380                | 515               |
+| 125,000    | 6         | 140                | 345               |
+| 500,000    | N/A       | 5                  | 97                |
+| 1,000,000  | N/A       | 1                  | 31                |
 
 <br>
 <br>
