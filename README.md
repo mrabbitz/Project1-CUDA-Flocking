@@ -44,50 +44,10 @@ For each applicable rule, the given boid's velocity change is calculated based o
 
 ##### Method 2: Uniform Grid Scattered Neighbor Search
 In a preprocess step, "bin" the boids into a **uniform spatial grid** data structure.
+With the clever use of a few buffers, this means that pointers to boids within the same grid cell are stored contiguously in memory.
+However, the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
 
-We utilize four buffers:
-1. Buffer containing a pointer for each boid to its position and velocity data
-2. Buffer containing the grid index of each boid
-3. Buffer containing a pointer for each cell to the beginning of its data in Buffer 1
-4. Buffer containing a pointer for each cell to the end of its data in Buffer 1
-
-We will use an example below to explain their usage.
-
-
-We first populate Buffer 1 and Buffer 2.
-
-In our example, "Grid cell index" is Buffer 2 and "Boid index" is Buffer 1:
-
-![Scattered_Buffer_2_3_Initial](images/Scattered_Buffer_2_3_Initial.PNG)
-
-Next we sort Buffer 2 by its value, and Buffer 1 is simultaneously rearranged by Buffer 2's rearragement.
-
-In our example, "Grid cell index" is Buffer 2 and "Boid index" is Buffer 1:
-
-![Scattered_Buffer_2_3_Sorted](images/Scattered_Buffer_2_3_Sorted.PNG)
-
-Lastly, we populate Buffers 3 and 4.
-
-In our example, "Cell data pointers" is Buffers 3 and 4 combined, "Grid cell index" in the bottom table is Buffer 2 and "Boid index" is Buffer 1:
-
-![Scattered_Buffer_1_2_3_4_Sorted](images/Scattered_Buffer_1_2_3_4_Sorted.PNG)
-
-Given that the actual boid data was never rearranged, we use Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
-
-In our example, we now have the full picture, where
-"Cell data pointers" is Buffers 3 and 4 combined,
-"Grid cell index" in the middle table is Buffer 2,
-"Boid index" in the middle table is Buffer 1,
-and "Pos + Vel" in the bottom table is the boid data.
-
-Note the "reach" from Buffer 1 to the bottom table.
-
-![Scattered_Full_Sorted](images/Scattered_Full_Sorted.PNG)
-
-To summarize, pointers to boids in a single cell are contiguous in memory, but the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
-
-
-After the preprocess step, we then perform the calculations to update the boids.
+After the preprocess step, we then perform the calculations to update the boid data.
 
 To determine how many cells to check around a given boid, first compute a ratio by dividing
 twice the maximum neighborhood distance of the three rules by the cell width of the grid.
@@ -99,20 +59,11 @@ In this example, this covers the boid’s cell plus 26 neighboring cells, result
 
 You then iterate through the boids contained in these cells to perform the necessary calculations.
 
-**During this iteration is where we use Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.**
+**During this iteration is where we "reach" for the boid data that is scattered in memory.**
 
 ##### Method 3: Uniform Grid Coherent Neighbor Search
-Everything is the same as Method 2, except we eliminate the use of Buffer 1 to "reach" for the boid data that is scattered in memory relative to Buffer 1 and Buffer 2.
-rearranging the boid data itself so that all the velocities and positions of boids in one cell are also contiguous in memory, so this data can be accessed directly using Buffers 3 and 4.
-
-We rearrange the boid data in a final preprocess step by taking the boid data index value of Buffer 1 to retrieve the boid data and place the boid data in a new buffer in the same order that Buffer 1 is in.
-
-This is full picture, where
-"Cell data pointers" is Buffers 3 and 4 combined,
-"Grid cell index" in the bottom table is Buffer 2,
-and "Pos + Vel" in the bottom table is the boid data.
-
-![Coherent_Full_Sorted](images/Coherent_Full_Sorted.PNG)
+Everything is the same as Method 2, except we eliminate the "reach" for the boid data that is scattered in memory.
+We do this by rearranging the boid data itself so that all the velocities and positions of boids in the same grid cell are also contiguous in memory.
 
 #### Grid-Looping Optimization for Methods 2 and 3:
 Initially, we determined how many ccells to check around a given boid by computing a ratio by dividing twice the maximum neighborhood distance of the three rules by the cell width of the grid.
