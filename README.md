@@ -139,7 +139,7 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 <br>
 
 ### 3.3: FPS vs (Cell Width / Max Rule Distance) Ratio
-**Section 3.3 fixed variables: block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
+**Section 3.3 fixed variables: maximum boid rule distance, block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
 
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 *To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
