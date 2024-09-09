@@ -150,7 +150,11 @@ As a reminder of the importance of this ratio, which is described in detail in P
 
 This gives 2 * (Max Rule Distance / Cell Width), which can be rewritten as 2 / (Cell Width / Max Rule Distance)
 
-Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as ((2 * result) + 1)<sup>3</sup>
+Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as
+
+((2 * result) + 1)<sup>3</sup>
+
+Here are the results of what we use in this section's performance test:
 
 | Grid Cell Width | Max Rule Distance |      Ratio      |  +- offset  | Total number of cells to consider |
 | --------------- | ----------------- | --------------- | ----------- | --------------------------------- |
