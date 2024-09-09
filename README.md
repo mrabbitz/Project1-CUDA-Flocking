@@ -107,8 +107,8 @@ We determine the closest point of a cell to the given boid's position by clampin
 
 <br>
 
-#### 3.1.3: Analysis
-
+#### 3.1.3: Observations
+For each implementation, changing the boid count clearly affects performance. This is because...
 
 <br>
 <br>
@@ -124,6 +124,11 @@ We determine the closest point of a cell to the given boid's position by clampin
 | 256        | 115       | 760                | 1070              |
 | 512        | 120       | 775                | 1065              |
 | 1,024      | 121       | 780                | 1080              |
+
+<br>
+
+#### 3.2.2: Observations
+For each implementation, changing the block count and block size seemingly doesn't affect performance. This is because...
 
 <br>
 <br>
