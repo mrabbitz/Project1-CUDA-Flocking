@@ -24,7 +24,7 @@ with slight adaptations. For the purposes of an interesting simulation,
 we will say that two boids only influence each other by a given rule if they
 are within the rule's **neighborhood distance** of each other, respectively.
 
-Below are two outputs from the simulation, slowed down for easier viewing:
+Below are two outputs from the simulation, slowed down for ease of viewing:
 
 |25,000 Boid Count|
 |:--:|
