@@ -43,7 +43,7 @@ A given boid iterates through every other boid in the simulation to check if the
 For each applicable rule, the given boid's velocity change is calculated based on that rule’s criteria.
 
 #### Method 2: Uniform Grid Scattered Neighbor Search
-In a preprocess step, "bin" the boids into a **uniform spatial grid** data structure.
+In a preprocess step, "bin" the boids into a uniform spatial grid data structure.
 With the clever use of a few buffers, this means that pointers to boids within the same grid cell are contiguous in memory.
 However, the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
 
