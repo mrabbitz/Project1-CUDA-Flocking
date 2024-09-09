@@ -135,7 +135,8 @@ The GPU used for this test, with 1920 CUDA cores across 30 SMs (64 cores per SM)
 This is due to the GPU's efficient occupancy and scheduling, as well as the kernels' lack of dependence on synchronization or shared memory, which are more sensitive to block size changes.
 
 <br>
-<br>
+
+### 3.3: FPS vs Cell Volume - fixed block size of 128 using Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization
 
 
 
