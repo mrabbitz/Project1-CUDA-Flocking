@@ -59,7 +59,7 @@ In this example, this covers the boid’s cell plus 26 neighboring cells, result
 
 You then iterate through the boids contained in these cells to perform the necessary calculations.
 
-**During this iteration is where we "reach" for the boid data that is scattered in memory.**
+***During this iteration is where we "reach" for the boid data that is scattered in memory.***
 
 ##### Method 3: Uniform Grid Coherent Neighbor Search
 Everything is the same as Method 2, except we eliminate the "reach" for the boid data that is scattered in memory.
