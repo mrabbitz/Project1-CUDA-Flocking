@@ -148,7 +148,7 @@ As a reminder of the importance of this ratio, which is described in detail in P
 
 *To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
 
-2 * (Max Rule Distance / Cell Width) can be rewritten as 2 / (Cell Width / Max Rule Distance)
+This gives 2 * (Max Rule Distance / Cell Width), which can be rewritten as 2 / (Cell Width / Max Rule Distance)
 
 Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as ((2 * result) + 1)<sup>3</sup>
 
