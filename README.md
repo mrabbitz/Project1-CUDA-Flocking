@@ -38,11 +38,11 @@ Below are two outputs from the simulation, slowed down for easier viewing:
 ## Part 2: Implementation Details
 Three methods of implementation were used to highlight their respective performance implications.
 
-##### Method 1: Naive Neighbor Search
+#### Method 1: Naive Neighbor Search
 A given boid iterates through every other boid in the simulation to check if their distance falls within the neighborhood distance defined by any of the three rules.
 For each applicable rule, the given boid's velocity change is calculated based on that rule’s criteria.
 
-##### Method 2: Uniform Grid Scattered Neighbor Search
+#### Method 2: Uniform Grid Scattered Neighbor Search
 In a preprocess step, "bin" the boids into a **uniform spatial grid** data structure.
 With the clever use of a few buffers, this means that pointers to boids within the same grid cell are contiguous in memory.
 However, the boid data itself (velocities and positions) is scattered all over the place. Hence, the "Scattered" in Uniform Grid Scattered Neighbor Search.
@@ -61,7 +61,7 @@ You then iterate through the boids contained in these cells to perform the neces
 
 *During this iteration is where we "reach" for the boid data that is scattered in memory.*
 
-##### Method 3: Uniform Grid Coherent Neighbor Search
+#### Method 3: Uniform Grid Coherent Neighbor Search
 Everything is the same as Method 2, except we eliminate the "reach" for the boid data that is scattered in memory.
 We do this by rearranging the boid data itself so that all the velocities and positions of boids in the same grid cell are also contiguous in memory.
 
