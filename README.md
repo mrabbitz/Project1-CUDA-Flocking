@@ -136,7 +136,7 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 
 <br>
 
-### 3.3: FPS vs Cell Volume - fixed block size of 128 using Uniform Grid Coherent Neighbor Search
+### 3.3: FPS vs (Cell Width / Max Rule Distance) Ratio - fixed block size of 128 using Uniform Grid Coherent Neighbor Search
 
 #### 3.3.1: Visualization OFF
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
