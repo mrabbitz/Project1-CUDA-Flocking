@@ -96,6 +96,7 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 
 <br>
 <br>
+<br>
 
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
