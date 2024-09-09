@@ -158,8 +158,8 @@ Here are the results of what we use in this section's performance test:
 
 | Grid Cell Width | Max Rule Distance |      Ratio      |  +- offset  | Total number of cells to consider |
 | --------------- | ----------------- | --------------- | ----------- | --------------------------------- |
-| 2.5             | 5                 | 2.5  / 5 = 0.5  | 2 / 0.5 = 4 | ((2 * 4) + 1)<sup>3</sup> = 729   |
-| 5               | 5                 | 5.0  / 5 = 1.0  | 2 / 1.0 = 2 | ((2 * 2) + 1)<sup>3</sup> = 125   |
+| 2.5             | 5                 |  2.5  / 5 = 0.5 | 2 / 0.5 = 4 | ((2 * 4) + 1)<sup>3</sup> = 729   |
+| 5               | 5                 |  5.0  / 5 = 1.0 | 2 / 1.0 = 2 | ((2 * 2) + 1)<sup>3</sup> = 125   |
 | 10              | 5                 | 10.0 / 5 = 2.0  | 2 / 2.0 = 1 | ((2 * 1) + 1)<sup>3</sup> = 27    |
 
 However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Rule Distance.
