@@ -151,11 +151,11 @@ As a reminder of the importance of this ratio, which is described in detail in P
 
 Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as ((2 * result) + 1)<sup>3</sup>
 
-| Grid Cell Width | Max Rule Distance | Ratio | +- offset of cells to consider for a given boid | Total number of cells to consider |
-| --------------- | ----------------- | ----- | ----------------------------------------------- | --------------------------------- |
-| 2.5             | 5                 | 0.5   | 2 / 0.5 = 4                                     | ((2 * 4) + 1)<sup>3</sup> = 729   |
-| 5               | 5                 | 1.0   | 2 / 1.0 = 2                                     | ((2 * 2) + 1)<sup>3</sup> = 125   |
-| 10              | 5                 | 2.0   | 2 / 2/0 = 1                                     | ((2 * 1) + 1)<sup>3</sup> = 27    |
+| Grid Cell Width | Max Rule Distance |      Ratio      | +- offset of cells to consider for a given boid | Total number of cells to consider |
+| --------------- | ----------------- | --------------- | ----------------------------------------------- | --------------------------------- |
+| 2.5             | 5                 | 2.5 / 5 = 0.5   | 2 / 0.5 = 4                                     | ((2 * 4) + 1)<sup>3</sup> = 729   |
+| 5               | 5                 | 5.0 / 5 = 1.0   | 2 / 1.0 = 2                                     | ((2 * 2) + 1)<sup>3</sup> = 125   |
+| 10              | 5                 | 10  / 5 = 2.0   | 2 / 2.0 = 1                                     | ((2 * 1) + 1)<sup>3</sup> = 27    |
 
 However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Rule Distance.
 
