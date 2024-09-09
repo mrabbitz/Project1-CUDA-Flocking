@@ -50,7 +50,7 @@ However, the boid data itself (velocities and positions) is scattered all over t
 After the preprocess step, we then perform the calculations to update a given boid's data by only considering other boids that are in nearby grid cells.
 
 To determine which cells to utilize for a given boid, first compute a ratio by dividing
-twice the maximum neighborhood distance of the three boid rules by the cell width of the grid.
+(twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 This ratio helps determine how many cells to check in each dimension relative to the cell containing the given boid.
 
 For example, if the maximum neighborhood distance is 5 and the cell width is 10, the ratio is (2 * 5) / 10 = 1.
