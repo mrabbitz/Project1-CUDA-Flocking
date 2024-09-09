@@ -167,7 +167,7 @@ However, keep in mind the Grid-Loop Optimization, where we only continue to cons
 #### 3.3.1: Visualization OFF
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
 
-| Boid Count | Ratio 0.5 FPS | Ratio 1.0 FPS | Ratio 2.0 FPS |
+| Boid Count | 0.5 Ratio FPS | 1.0 Ratio FPS | 2.0 Ratio FPS |
 | ---------- | ------------- | ------------- | ------------- |
 | 5,000      | 800           | 1120          | 1100          |
 | 25,000     | 550           | 1060          | 1100          |
