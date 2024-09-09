@@ -68,7 +68,7 @@ We do this by rearranging the boid data itself so that all the velocities and po
 #### Grid-Looping Optimization for Methods 2 and 3:
 Initially, we determined which cells to utilize for a given boid by
 first computing a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
-The given boid's cell += the ratio in each dimension end up being the cells that contain the boids we need to iterate through for our calculations.
+The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.
 
 We took this a step further calculating the closest point of each of these cells to the given boid's position, and checking if the result is within the the maximum neighborhood distance of the three rules.
 If not, we dont consider the cell for iterating through its contained boids for calculating the given boid's velocity update.
