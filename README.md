@@ -169,7 +169,7 @@ Here are the results of what we use in this section's performance test:
 However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Neighborhood Distance.
 
 #### 3.3.1: Visualization OFF
-![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
+![FPS_CellWidth_MaxNeighborhoodDist_Ratio](images/FPS_CellWidth_MaxNeighborhoodDist_Ratio.png)
 
 | Boid Count | 0.5 Ratio FPS | 1.0 Ratio FPS | 2.0 Ratio FPS |
 | ---------- | ------------- | ------------- | ------------- |
