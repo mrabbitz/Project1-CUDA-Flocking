@@ -141,3 +141,13 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
 
 
+| Boid Count | Ratio 0.5 FPS | Ratio 1.0 FPS | Ratio 2.0 FPS |
+| ---------- | ------------- | ------------- | ------------- |
+| 5,000      | 800           | 1120          | 1100          |
+| 25,000     | 550           | 1060          | 1100          |
+| 50,000     | 500           | 730           | 880           |
+| 125,000    | 270           | 580           | 465           |
+| 500,000    | 115           | 215           | 110           |
+| 1,000,000  | 54            | 95            | 33            |
+
+
