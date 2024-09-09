@@ -142,7 +142,7 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 **Section 3.3 fixed variables: maximum boid rule distance, block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
 
 The (Cell Width / Max Rule Distance) Ratio is a fancy term to describe the uniform grid cell size relative to the maximum distance of the three boid rules.
-If we assume a fixed Max Rule Distance of the default value of the simulation, which is 5, we can envision how the ratio has a positive correlation to cell size.
+If we assume a fixed Max Rule Distance of the default value of the simulation, which is 5, we can intuitively see how the ratio has a positive correlation to cell size.
 
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 *To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
