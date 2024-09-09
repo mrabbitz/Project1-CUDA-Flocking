@@ -85,13 +85,37 @@ Fixed block size of 128 threads per block
 
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
 
+| # Boids   | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
+| --------- | --------- | ------------------ | ----------------- |
+| 5,000     | 900       | 1100               | 1100              |
+| 25,000    | 120       | 800                | 1100              |
+| 50,000    | 35        | 500                | 880               |
+| 125,000   | 6         | 168                | 465               |
+| 500,000   | N/A       | 6                  | 110               |
+| 1,000,000 | N/A       | 2                  | 33                |
+
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
+
+| # Boids   | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
+| --------- | --------- | ------------------ | ----------------- |
+| 5,000     | 490       | 565                | 560               |
+| 25,000    | 110       | 485                | 560               |
+| 50,000    | 34        | 380                | 515               |
+| 125,000   | 6         | 140                | 345               |
+| 500,000   | N/A       | 5                  | 97                |
+| 1,000,000 | N/A       | 1                  | 31                |
 
 ### Part 3.2: FPS vs Block Size
 Fixed boid count of 25,000
 
 ![FPS_BlockSize](images/FPS_BlockSize.png)
 
+| Block Size | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
+| ---------- | --------- | ------------------ | ----------------- |
+| 128        | 120       | 800                | 1100              |
+| 256        | 115       | 760                | 1070              |
+| 512        | 120       | 775                | 1065              |
+| 1,024      | 121       | 780                | 1080              |
 
 
 
