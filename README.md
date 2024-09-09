@@ -144,11 +144,13 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 *To determine which cells to utilize for a given boid, first compute a ratio by dividing (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid). The given boid's cell += the ratio in each dimension are the cells that contain the boids we need to iterate through for our calculations.*
 
-We can represent this formula as 2 * (Max Rule Distance / Cell Width), and then 2 / (Cell Width / Max Rule Distance)
+We can represent this formula as 2 * (Max Rule Distance / Cell Width), and then 2 / (Cell Width / Max Rule Distance).
 
-For example, if Cell Width is 10 and Max Rule Distance is 5, the ratio is 2 and the formula is 2 / 2 which means +-1 in every dimension which gives 3 * 3 * 3 = 27 total cells.
-For example, if Cell Width is 5 and Max Rule Distance is 5, the ratio is 1 and the formula is 2 / 1 which means +-2 in every dimension which gives 5 * 5 * 5 = 125 total cells.
-For example, if Cell Width is 2.5 and Max Rule Distance is 5, the ratio is 0.5 and the formula is 2 / 0.5 which means +-4 in every dimension which gives 9 * 9 * 9 = 729 total cells.
+We are also going to assume the default Max Rule Distance in the simulation, which is 5.
+
+For example, if Cell Width is 10 the ratio is 10 / 5 = 2 and the formula is 2 / 2 which means +-1 in every dimension which gives 3 * 3 * 3 = 27 total cells.
+For example, if Cell Width is 5 the ratio is 5 / 5 = 1 and the formula is 2 / 1 which means +-2 in every dimension which gives 5 * 5 * 5 = 125 total cells.
+For example, if Cell Width is 2.5 the ratio is 2.5 / 5 = 0.5 and the formula is 2 / 0.5 which means +-4 in every dimension which gives 9 * 9 * 9 = 729 total cells.
 
 However, keep in mind the Grid-Loop Optimization, where we only continue to consider the boids in any of these cells only if the cell's nearest distance from the boid is not greater than the Max Rule Distance.
 
