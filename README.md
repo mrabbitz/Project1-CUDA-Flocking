@@ -78,6 +78,6 @@ Frames Per Second (FPS) will be the measurment of performance within this sectio
 
 FPS is measured using the GLFW timer.
 
-In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
+Visualization of the boids is disabled so that the framerate reported will be for the the simulation only.
 
 
