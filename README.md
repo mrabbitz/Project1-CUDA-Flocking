@@ -78,7 +78,7 @@ We determine the closest point of a cell to the given boid's position by clampin
 - In cases where Visualization of the boids is disabled, the FPS reported will be for the simulation only.
 
 ### 3.1: FPS vs Boid Count
-**Fixed block size of 128**
+**Section 3.1 fixed variables: block size of 128**
 
 #### 3.1.1: Visualization OFF
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
@@ -117,7 +117,7 @@ As we push the limits of the Uniform Grid methods, Coherent Neighbor Search alwa
 <br>
 
 ### 3.2: FPS vs Block Size
-**Fixed boid count of 25,000**
+**Section 3.2 fixed variables: boid count of 25,000**
 
 #### 3.2.1: Visualization OFF
 ![FPS_BlockSize](images/FPS_BlockSize.png)
@@ -139,7 +139,7 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 <br>
 
 ### 3.3: FPS vs (Cell Width / Max Rule Distance) Ratio
-**Fixed block size of 128 using Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
+**Section 3.3 fixed variables: block size of 128 and implementation method of Uniform Grid Coherent Neighbor Search with Grid-Looping Optimization**
 
 #### 3.3.1: Visualization OFF
 ![FPS_CellWidth_MaxRuleDist_Ratio](images/FPS_CellWidth_MaxRuleDist_Ratio.png)
