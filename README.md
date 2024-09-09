@@ -95,7 +95,6 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 | 1,000,000 | N/A       | 2                  | 33                |
 
 \
-\
 
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
@@ -108,7 +107,6 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 | 500,000   | N/A       | 5                  | 97                |
 | 1,000,000 | N/A       | 1                  | 31                |
 
-\
 \
 
 ### Part 3.2: FPS vs Block Size
