@@ -94,10 +94,6 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 | 500,000    | N/A       | 6                  | 110               |
 | 1,000,000  | N/A       | 2                  | 33                |
 
-<br>
-<br>
-<br>
-
 #### 3.1.2: Visualization ON
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
