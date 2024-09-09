@@ -80,10 +80,9 @@ FPS is measured using the GLFW timer.
 
 In cases where Visualization of the boids is disabled, the framerate reported will be for the the simulation only.
 
-### Part 3.1: FPS vs Boid Count
-**For this section, we use a fixed block size of 128**
+### 3.1: FPS vs Boid Count - fixed block size of 128
 
-#### 3.1.1: FPS vs Boid Count - Visualization OFF
+#### 3.1.1: Visualization OFF
 ![FPS_BoidCount_NoViz](images/FPS_BoidCount_NoViz.png)
 
 | Boid Count | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
@@ -99,7 +98,7 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 <br>
 <br>
 
-#### 3.1.2: FPS vs Boid Count - Visualization ON
+#### 3.1.2: Visualization ON
 ![FPS_BoidCount_Viz](images/FPS_BoidCount_Viz.png)
 
 | Boid Count | Naive FPS | Scattered Grid FPS | Coherent Grid FPS |
@@ -114,14 +113,13 @@ In cases where Visualization of the boids is disabled, the framerate reported wi
 <br>
 <br>
 
-#### 3.1.3: FPS vs Boid Count - Analysis
+#### 3.1.3: Analysis
 
 
 <br>
 <br>
 
-### Part 3.2: FPS vs Block Size
-**For this section, we use a fixed boid count of 25,000**
+### Part 3.2: FPS vs Block Size - fixed boid count of 25,000
 
 ![FPS_BlockSize](images/FPS_BlockSize.png)
 
