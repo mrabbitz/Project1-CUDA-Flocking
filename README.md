@@ -189,4 +189,10 @@ However, keep in mind the Grid-Loop Optimization, where we only continue to cons
 <br>
 
 #### 3.3.2: Observations
+At lower boid counts, a higher ratio results in better performance.
+At higher boid counts, a lower ratio results in better performance.
+This reveals a negative correlation between boid count and ratio: as boid count increases, performance improves with a lower ratio.
 
+As the ratio and cell size decrease, the number of cells a boid needs to consider increases, showing a positive correlation between boid count and the number of grid cells involved (which grows as cell size shrinks).
+
+When boid counts are low, using larger cells with fewer neighbors leads to faster checks because each cell contains fewer boids to evaluate. In this case, the overhead of examining more grid cells outweighs the advantage of having fewer boids per cell. However, as boid count increases, more boids fill the cells, and reducing cell size (with a lower ratio) reduces the number of boids per cell. This lowers the total number of interactions, making the process more efficient as the boid count rises. Thus, although it may seem counterintuitive, checking more neighbors becomes less of a performance issue when boid density is high.
