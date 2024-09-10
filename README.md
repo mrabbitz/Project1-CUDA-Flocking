@@ -162,7 +162,7 @@ Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance
 
 Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as:
 
-$((2 \cdot \text{result}) + 1)^3$
+$((2 \cdot \text{offset}) + 1)^3$
 
 Here are the results of what we use in this section's performance test:
 
