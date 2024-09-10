@@ -55,7 +55,7 @@ If this gives us a non-whole number (e.g. 4.2), then round up to the next whole 
 Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.
 
 For example, if the maximum neighborhood distance is 5 and the cell width is 10, the result is (2 * 5) / 10 = 1.
-This indicates that you should check the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
+This indicates that you should iterates through the boids in the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
 In this example, these cells are represented by ([x - 1, x + 1], [y - 1, y + 1], [z - 1, z + 1]) where (x, y, z) is the cell of the given boid. This results in a total of 3<sup>3</sup> = 27 cells, inclusive of the given boid’s cell.
 
 You then iterate through the boids contained in these cells to apply the three boid rules to update a given boid's velocity.
