@@ -49,7 +49,7 @@ However, the boid data itself (velocities and positions) is scattered all over t
 
 After the preprocess step, we apply the three boid rules to update a given boid's velocity by only considering other boids that are in nearby grid cells.
 
-To determine the nearby grid cells for a given boid, first divide
+To determine the appropriate nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 The result is the ± offset in each dimension of the given boid's cell such that the range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.
 
@@ -146,7 +146,7 @@ If we assume a fixed Max Neighborhood Distance of the default value of the simul
 
 As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
 
-*To determine the nearby grid cells for a given boid, first divide
+*To determine the appropriate nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 The result is the ± offset in each dimension of the given boid's cell such that the range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.*
 
