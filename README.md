@@ -130,7 +130,7 @@ As we push the limits of the Uniform Grid methods, Coherent Neighbor Search alwa
 | 128        | 120       | 800                | 1100              |
 | 256        | 115       | 760                | 1070              |
 | 512        | 120       | 775                | 1065              |
-| 1,024      | 121       | 780                | 1080              |
+| 1024       | 121       | 780                | 1080              |
 
 <br>
 
