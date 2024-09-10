@@ -69,12 +69,11 @@ Everything is the same as Method 2, except we eliminate the "reach" for the boid
 We do this by rearranging the boid data itself so that all the velocities and positions of boids in the same grid cell are also contiguous in memory.
 
 #### Grid-Looping Optimization for Methods 2 and 3:
-Method 2's description shows how for a given boid, we determine the cells that contain the boids we need to iterate through to apply the three boid rules to the given boid.
+In Method 2, we first identify the grid cells containing the boids relevant for applying the three boid rules to a given boid.
 
-We take this a step further by calculating the closest point of each of these cells to the given boid's position, and checking if the result is within the the maximum neighborhood distance of the three boid rules.
-If it is not, we no longer consider the boids in that cell.
+To optimize this, we calculate the closest point on each of these cells to the boid's position and check if this distance is within the maximum neighborhood distance defined by the boid rules. If the distance exceeds this threshold, we exclude the boids in that cell from consideration.
 
-We determine the closest point of a cell to the given boid's position by clamping the boid's position to the x, y, and z bounds of the cell, then subtracting the boid's position from this closest point of the cell.
+To find the closest point, we clamp the boid's position to the bounds of the cell along each dimension, and then compute the difference between the boid's position and this closest point.
 
 ## Part 3: Performance Analysis
 - Frames Per Second (FPS) is the measurment of performance in this section. FPS is measured using a GLFW timer within the main loop.
