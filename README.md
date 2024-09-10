@@ -67,7 +67,7 @@ Everything is the same as Method 2, except we eliminate the "reach" for the boid
 We do this by rearranging the boid data itself so that all the velocities and positions of boids in the same grid cell are also contiguous in memory.
 
 #### Grid-Looping Optimization for Methods 2 and 3:
-Method 2's description shows how for a given boid, we determine the cells that contain the boids we need to iterate through to apply the three boid rules to the given boid..
+Method 2's description shows how for a given boid, we determine the cells that contain the boids we need to iterate through to apply the three boid rules to the given boid.
 
 We take this a step further by calculating the closest point of each of these cells to the given boid's position, and checking if the result is within the the maximum neighborhood distance of the three boid rules.
 If it is not, we no longer consider the boids in that cell.
