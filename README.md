@@ -58,7 +58,7 @@ For example, if the maximum neighborhood distance is 5 and the cell width is 10,
 This indicates that you should consider the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
 In this example, these cells are represented by ([x - 1, x + 1], [y - 1, y + 1], [z - 1, z + 1]) where (x, y, z) is the cell of the given boid. This results in a total of 3<sup>3</sup> = 27 cells, inclusive of the given boid’s cell.
 
-You then iterate through the boids contained in these cells to apply the three boid rules to update a given boid's velocity.
+You then iterate through the boids contained in these cells to apply the three boid rules to update the given boid's velocity.
 
 *During this iteration is where we "reach" for the boid data that is scattered in memory.*
 
