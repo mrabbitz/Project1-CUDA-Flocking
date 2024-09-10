@@ -154,9 +154,9 @@ If this gives us a non-whole number (e.g. 4.2), then round up to the next whole 
 Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.*
 
 We can rewrite
-<span style="font-size: 1.5em;">$$\frac{2 \cdot \text{Max Neighborhood Distance}}{\text{Cell Width}}$$</span>
+<span style="font-size: 2em;">$$\frac{2 \cdot \text{Max Neighborhood Distance}}{\text{Cell Width}}$$</span>
 as
-<span style="font-size: 1.5em;">$$\frac{2}{\left(\frac{\text{Cell Width}}{\text{Max Neighborhood Distance}}\right)}$$.</span>
+<span style="font-size: 2em;">$$\frac{2}{\left(\frac{\text{Cell Width}}{\text{Max Neighborhood Distance}}\right)}$$</span>
 
 Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance) Ratio of this section.
 
