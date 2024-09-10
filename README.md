@@ -52,7 +52,7 @@ After the preprocess step, we apply the three boid rules to update a given boid'
 To determine the appropriate nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 If this gives us a non-whole number (e.g. 4.2), then round up to the next whole number (e.g. 4.2 rounds up to 5).
-Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.
+Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.
 
 For example, if the maximum neighborhood distance is 5 and the cell width is 10, the result is (2 * 5) / 10 = 1.
 This indicates that you should check the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
@@ -150,7 +150,7 @@ As a reminder of the importance of this ratio, which is described in detail in P
 *To determine the appropriate nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 If this gives us a non-whole number (e.g. 4.2), then round up to the next whole number (e.g. 4.2 rounds up to 5).
-Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to a given boid.*
+Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.*
 
 We can rewrite (2 * Max Neighborhood Distance) / (Cell Width) as 2 / (Cell Width / Max Neighborhood Distance).
 
