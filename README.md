@@ -60,7 +60,7 @@ This means you should consider the boid's own cell, plus the adjacent cells with
 In this case, the relevant cells are represented by ([x - 1, x + 1], [y - 1, y + 1], [z - 1, z + 1]), where (x, y, z) is the boid's cell.
 This yields a total of 3<sup>3</sup> = 27 cells, including the boid’s own cell.
 
-You then iterate through the boids contained in these cells to apply the three boid rules to update the given boid's velocity.
+You then iterate through the boids in these cells to apply the three boid rules, updating the velocity of the given boid accordingly.
 
 *During this iteration is where we "reach" for the boid data that is scattered in memory.*
 
