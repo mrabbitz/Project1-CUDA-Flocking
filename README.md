@@ -146,14 +146,14 @@ This is due to the GPU's efficient occupancy and scheduling, as well as the kern
 The (Cell Width / Max Neighborhood Distance) Ratio is a fancy term to describe the uniform grid cell size relative to the maximum distance of the three boid rules.
 If we assume a fixed Max Neighborhood Distance of the default value of the simulation, which is 5, we can intuitively see how the ratio has a positive correlation to cell size.
 
-As a reminder of the importance of this ratio, which is described in detail in Part 2 under Method 2:
+As a reminder of the importance of this ratio, which is referenced in Part 2 under Method 2:
 
 *To determine the appropriate nearby grid cells for a given boid, first divide
 (twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
 If this gives us a non-whole number (e.g. 4.2), then round up to the next whole number (e.g. 4.2 rounds up to 5).
 Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.*
 
-We can rewrite (2 * Max Neighborhood Distance) / (Cell Width) as 2 / (Cell Width / Max Neighborhood Distance).
+We can rewrite $$\frac{2 \cdot \text{Max Neighborhood Distance}}{\text{Cell Width}}$$ as $$\frac{2}{\left(\frac{\text{Cell Width}}{\text{Max Neighborhood Distance}}\right)}$$.
 
 Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance) Ratio of this section.
 
