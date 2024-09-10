@@ -160,9 +160,9 @@ $$\frac{2}{\left(\frac{\text{Cell Width}}{\text{Max Neighborhood Distance}}\righ
 
 Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance) Ratio of this section.
 
-Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as
+Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as:
 
-((2 * result) + 1)<sup>3</sup>
+\left( (2 \cdot \text{result}) + 1 \right)^3
 
 Here are the results of what we use in this section's performance test:
 
