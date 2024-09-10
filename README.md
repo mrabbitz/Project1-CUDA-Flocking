@@ -71,7 +71,7 @@ We do this by rearranging the boid data itself so that all the velocities and po
 #### Grid-Looping Optimization for Methods 2 and 3:
 As described in Method 2, we first identify the grid cells containing the boids relevant for applying the three boid rules to a given boid.
 
-To optimize this, we calculate the closest point on each of these cells to the boid's position and check if this distance is within the maximum neighborhood distance defined by the boid rules. If the distance exceeds this threshold, we exclude the boids in that cell from consideration.
+To optimize this, we calculate the closest point on each of these cells to the given boid's position and check if this distance is within the maximum neighborhood distance defined by the boid rules. If the distance exceeds this threshold, we exclude the boids in that cell from consideration.
 
 To find the closest point, we clamp the boid's position to the bounds of the cell along each dimension, and then compute the difference between the boid's position and this closest point.
 
