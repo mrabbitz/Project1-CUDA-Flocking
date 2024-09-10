@@ -160,13 +160,13 @@ $$\frac{2}{\left(\frac{\text{Cell Width}}{\text{Max Neighborhood Distance}}\righ
 
 Note the rewritten equation includes the (Cell Width / Max Neighborhood Distance) Ratio of this section.
 
-Once we have the +- offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as:
+Once we have the ± offset of cells to consider for a given boid, we can calculate the total number of cells in 3D space to consider as:
 
 $((2 \cdot \text{offset}) + 1)^3$
 
 Here are the results of what we use in this section's performance test:
 
-| Grid Cell Width | Max Neighborhood Distance |      Ratio      |  +- offset  | Total number of cells to consider |
+| Grid Cell Width | Max Neighborhood Distance |      Ratio      |  ± offset  | Total number of cells to consider |
 | --------------- | ------------------------- | --------------- | ----------- | --------------------------------- |
 | 2.5             | 5                         | 2.5  / 5 = 0.5  | 2 / 0.5 = 4 | ((2 * 4) + 1)<sup>3</sup> = 729   |
 | 5               | 5                         | 5.0  / 5 = 1.0  | 2 / 1.0 = 2 | ((2 * 2) + 1)<sup>3</sup> = 125   |
