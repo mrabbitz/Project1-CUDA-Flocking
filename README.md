@@ -49,14 +49,16 @@ However, the boid data itself (velocities and positions) is scattered all over t
 
 After the preprocess step, we apply the three boid rules to update a given boid's velocity by only considering other boids that are in nearby grid cells.
 
-To determine the appropriate nearby grid cells for a given boid, first divide
-(twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
-If this gives us a non-whole number (e.g. 4.2), then round up to the next whole number (e.g. 4.2 rounds up to 5).
-Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.
+To determine which nearby grid cells a boid should consider,
+start by dividing twice the maximum neighborhood distance of the three boid rules by the grid cell width.
+If the result is not a whole number (e.g., 4.2), round up to the next whole number (e.g., 5).
+This number represents the ± offset in each dimension around the boid's current cell,
+defining the range of neighboring cells to check for interactions with other boids.
 
 For example, if the maximum neighborhood distance is 5 and the cell width is 10, the result is (2 * 5) / 10 = 1.
-This indicates that you should consider the cell containing the given boid, as well as the cells adjacent to it with an offset of ±1 in each dimension.
-In this example, these cells are represented by ([x - 1, x + 1], [y - 1, y + 1], [z - 1, z + 1]) where (x, y, z) is the cell of the given boid. This results in a total of 3<sup>3</sup> = 27 cells, inclusive of the given boid’s cell.
+This means you should consider the boid's own cell, plus the adjacent cells with an offset of ±1 in each dimension.
+In this case, the relevant cells are represented by ([x - 1, x + 1], [y - 1, y + 1], [z - 1, z + 1]), where (x, y, z) is the boid's cell.
+This yields a total of 3<sup>3</sup> = 27 cells, including the boid’s own cell.
 
 You then iterate through the boids contained in these cells to apply the three boid rules to update the given boid's velocity.
 
@@ -148,10 +150,11 @@ If we assume a fixed Max Neighborhood Distance of the default value of the simul
 
 As a reminder of the importance of this ratio, which is referenced in Part 2 under Method 2:
 
-*To determine the appropriate nearby grid cells for a given boid, first divide
-(twice the maximum neighborhood distance of the three boid rules) by (the cell width of the grid).
-If this gives us a non-whole number (e.g. 4.2), then round up to the next whole number (e.g. 4.2 rounds up to 5).
-Now, this result represents the ± offset in each dimension of the given boid's cell such that this range of cells are those that contain the boids we need to iterate through to apply the three boid rules to the given boid.*
+*To determine which nearby grid cells a boid should consider,
+start by dividing twice the maximum neighborhood distance of the three boid rules by the grid cell width.
+If the result is not a whole number (e.g., 4.2), round up to the next whole number (e.g., 5).
+This number represents the ± offset in each dimension around the boid's current cell,
+defining the range of neighboring cells to check for interactions with other boids.*
 
 We can rewrite
 $$\frac{2 \cdot \text{Max Neighborhood Distance}}{\text{Cell Width}}$$
